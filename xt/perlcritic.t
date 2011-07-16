@@ -16,4 +16,4 @@ elsif (version->new($Perl::Critic::VERSION) lt "1.088") {
     plan skip_all => "Perl::Critic 1.088 required for the test.";
 }
 
-all_critic_ok("./lib/SQL/");
+all_critic_ok("./lib");

@@ -78,7 +78,7 @@ file names and line numbers out of error messages and appends a stack entry
 for it.
 
 This module is aimed at template engines who reports errors in template
-perspective so that the debug screen indecates where the error occured inside
+perspective so that the debug screen indicates where the error occurred inside
 template as follows.
 
     function some_func not defined at /path/to/file/index.html line 13
@@ -90,6 +90,10 @@ template as follows.
     14:         </ul>
     15:     </div>
     16: </body>
+
+=head1 METHODS
+
+=head2 call
 
 =head1 SEE ALSO
 
