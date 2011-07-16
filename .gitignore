@@ -1,0 +1,10 @@
+.*
+!.gitignore
+!.perltidyrc
+*~
+blib
+Makefile*
+!Makefile.PL
+*META.yml
+pm_to_blib
+*bak

@@ -1,0 +1,17 @@
+(^|/)\.
+(^|/)\.svn/
+(^|/)\.git/
+(^|/)\$~
+(^|/)~
+(^|/)blib/
+(^|/)logs?/
+(^|/)data/
+(^|/)tmp/
+(^|/)Makefile$
+\.old$
+\.bak$
+\.SKIP$
+(^|/)pm_to_blib
+^cover_db/
+^nytprof/
+nytprof.out
