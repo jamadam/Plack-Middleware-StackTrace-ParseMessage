@@ -1,5 +1,3 @@
-__END__
-
 =head1 NAME
 
 Plack::Middleware::StackTrace::ParseMessage - Extended StackTrace
@@ -10,12 +8,15 @@ Plack::Middleware::StackTrace::ParseMessage - Extended StackTrace
 
 =head1 DESCRIPTION
 
-Retrieve file name and line number out of error message and append stack entry.
-This is aimed at template engines who reports errors in template perspective
-so that the debug screen indecates template file name and line number with
-some lines the error is surrounded by.
-    
-    some_func undefined at /path/to/file/index.html line 13
+This is an extended class of Plack::Middleware::StackTrace. This retrieves
+file names and line numbers out of error messages and appends a stack entry
+for it.
+
+This module is aimed at template engines who reports errors in template
+perspective so that the debug screen indecates where the error occured inside
+template as follows.
+
+    function some_func not defined at /path/to/file/index.html line 13
 
     10: <body>
     11:     <div>
