@@ -1,18 +1,41 @@
-Plack-Middleware-StackTrace-ParseMessage
+=head1 NAME
 
-INSTALLATION
+Plack::Middleware::StackTrace::ParseMessage - Extended StackTrace
 
-To install this module, run the following commands:
+=head1 SYNOPSIS
 
-    perl Makefile.PL
-    make
-    make test
-    make install
+  enable "StackTrace::arseMessage";
 
-COPYRIGHT AND LICENSE
+=head1 DESCRIPTION
 
-Copyright (C) 2011 sugama
+Retrieve file name and line number out of error message and append stack entry.
+This is aimed at template engines who reports errors in template perspective
+so that the debug screen indecates template file name and line number with
+some lines the error is surrounded by.
+    
+    some_func undefined at /home/public/visith2/public_html/index.html line 13
+
+    10: <body>
+    11:     <div>
+    12:         <ul>
+    13:            <% some_func() %> <-- highlighted
+    14:         </ul>
+    15:     </div>
+    16: </body>
+
+=head1 SEE ALSO
+
+L<Plack::Middleware::StackTrace>
+
+=head1 AUTHOR
+
+Sugama Keita, E<lt>sugama@jamadam.comE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2011 by Sugama Keita.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 
+=cut

@@ -1,8 +1,18 @@
 Changes
 lib/Plack/Middleware/StackTrace/ParseMessage.pm
 Makefile.PL
-MANIFEST			This list of files
+MANIFEST
 README
 t/00_load.t
-t/99_pod.t
-t/99_podcoverage.t
+t/app.t
+t/port/basic.t
+t/port/force.t
+t/port/sigdie.t
+t/port/streaming.t
+t/port/utf8.t
+t/template.txt
+xt/99_pod.t
+xt/99_podcoverage.t
+xt/perlcritic.t
+xt/perlcriticrc
+xt/podspell.t
