@@ -78,7 +78,7 @@ This is aimed at template engines who reports errors in template perspective
 so that the debug screen indecates template file name and line number with
 some lines the error is surrounded by.
     
-    some_func undefined at /home/public/visith2/public_html/index.html line 13
+    some_func undefined at /path/to/file/index.html line 13
 
     10: <body>
     11:     <div>
