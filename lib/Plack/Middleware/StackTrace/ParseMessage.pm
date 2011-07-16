@@ -35,7 +35,7 @@ sub call {
         $self->app->($env);
     } catch {
         $caught = $_;
-        [ 500, [ "Content-Type", "text/plain; charset=utf-8" ], [ Plack::Middleware::StackTrace::no_trace_error(Plack::Middleware::StackTrace::utf8_safe($caught)) ] ];
+        [ 500, [ "Content-Type", "text/plain; charset=utf-8" ], [ no_trace_error(utf8_safe($caught)) ] ];
     };
 
     if ($trace && ($caught || ($self->force && ref $res eq 'ARRAY' && $res->[0] == 500)) ) {
@@ -45,9 +45,9 @@ sub call {
         $env->{'plack.stacktrace.html'} = $html;
         $env->{'psgi.errors'}->print($text) unless $self->no_print_errors;
         if (($env->{HTTP_ACCEPT} || '*/*') =~ /html/) {
-            $res = [500, ['Content-Type' => 'text/html; charset=utf-8'], [ Plack::Middleware::StackTrace::utf8_safe($html) ]];
+            $res = [500, ['Content-Type' => 'text/html; charset=utf-8'], [ utf8_safe($html) ]];
         } else {
-            $res = [500, ['Content-Type' => 'text/plain; charset=utf-8'], [ Plack::Middleware::StackTrace::utf8_safe($text) ]];
+            $res = [500, ['Content-Type' => 'text/plain; charset=utf-8'], [ utf8_safe($text) ]];
         }
     }
 
@@ -57,6 +57,12 @@ sub call {
     undef $trace;
 
     return $res;
+}
+
+{
+    no strict 'refs';
+    *{__PACKAGE__. '::utf8_safe'} = \&Plack::Middleware::StackTrace::utf8_safe;
+    *{__PACKAGE__. '::no_trace_error'} = \&Plack::Middleware::StackTrace::no_trace_error;
 }
 
 1;
