@@ -6,6 +6,7 @@ use Devel::StackTrace;
 use Devel::StackTrace::AsHTML;
 use Try::Tiny;
 use Plack::Util::Accessor qw( force no_print_errors);
+our $VERSION = '0.01';
 
 our $StackTraceClass = $Plack::Middleware::StackTrace::StackTraceClass;
 
