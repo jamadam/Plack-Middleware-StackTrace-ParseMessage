@@ -76,13 +76,13 @@ Plack::Middleware::StackTrace::ParseMessage - Extended StackTrace
 
 =head1 SYNOPSIS
 
-  enable "StackTrace::arseMessage";
+  enable "StackTrace::ParseMessage";
 
 =head1 DESCRIPTION
 
-This is an extended class of Plack::Middleware::StackTrace. This retrieves
-file names and line numbers out of error messages and appends a stack entry
-for it.
+This is an extended class of Plack::Middleware::StackTrace for replacement.
+This retrieves file name and line number out of error messages and appends a
+stack entry for it.
 
 This module is aimed at template engines who reports errors in template
 perspective so that the debug screen indicates where the error occurred inside
