@@ -22,6 +22,7 @@ sub call {
                 ignore_package => __PACKAGE__,
             );
             unshift(@{$trace->{raw}}, {args => [], caller => ['', $file, $line, '', '']});
+            wran $trace->to_string;
         } else {
             $trace = $StackTraceClass->new(
                 indent => 1, message => munge_error($_[0], [ caller ]),

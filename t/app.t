@@ -5,7 +5,7 @@ use Encode;
 use File::Basename 'dirname';
 use File::Spec;
 
-$template = join '/', File::Spec->splitdir(dirname(__FILE__)), 'template.txt';
+$template = join '/', File::Spec->rel2abs(File::Spec->splitdir(dirname(__FILE__))), 'template.txt';
 
 my $app =  builder {
     enable 'StackTrace::ParseMessage';
