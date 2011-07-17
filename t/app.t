@@ -18,6 +18,17 @@ my $res = $app->( { HTTP_ACCEPT => 'text/html', REQUEST_URI => '/', 'psgi.errors
 
 like($res->[2]->[0], qr{\x{E3}\x{83}\x{86}});
 
+#===================
+
+$app =  builder {
+    enable 'StackTrace::ParseMessage';
+    sub {die "Error"};
+};
+
+$psgi_errors = _EH->new(qr{^Error at t/app.t });
+
+$res = $app->( { HTTP_ACCEPT => 'text/html', REQUEST_URI => '/', 'psgi.errors' => $psgi_errors } );
+
 done_testing;
 
 package _EH;
