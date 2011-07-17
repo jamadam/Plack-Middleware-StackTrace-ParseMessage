@@ -64,6 +64,7 @@ sub call {
     no strict 'refs';
     *{__PACKAGE__. '::utf8_safe'} = \&Plack::Middleware::StackTrace::utf8_safe;
     *{__PACKAGE__. '::no_trace_error'} = \&Plack::Middleware::StackTrace::no_trace_error;
+    *{__PACKAGE__. '::no_trace_error'} = \&Plack::Middleware::StackTrace::munge_error;
 }
 
 1;
